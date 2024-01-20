@@ -10,7 +10,6 @@ export default component$(() => {
   const screeWidth = useContext(DashboardWidthContext);
 
 
-console.log(screeWidth.value<screeHeight.value)
   return (  
     <div class={clsx(screeWidth.value>screeHeight.value&&screeWidth.value<1000&&screeHeight.value<600?"mt-[3%]":"mt-[10%]","container mx-10 ")}>
       <div class="grid-container ">
