@@ -1,0 +1,43 @@
+
+.grid-container {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 1rem;
+  }
+  .file-upload {
+    border: 2px dashed #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+  }
+  .file-upload:hover {
+    background-color: #f8fafc;
+  }
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .input-group input,
+  .input-group textarea,
+  .input-group button {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+  }
+  .input-group textarea {
+    resize: vertical;
+  }
+  .input-group button {
+    background-color: #f8fafc;
+    color: #1a202c;
+    cursor: pointer;
+  }
+  .input-group button:hover {
+    background-color: #e2e8f0;
+  }

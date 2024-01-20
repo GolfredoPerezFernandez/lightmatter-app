@@ -1,35 +1,105 @@
-/**
- * Tailwind CSS imports
- * View the full documentation at https://tailwindcss.com
- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+  view-transition-name: root; 
+}
+::view-transition-old(root), 
+::view-transition-new(root) { 
+  animation-duration: 0.3s; 
+}
 @layer base {
-  :root {
-    --qwik-dark-blue: #006ce9;
-    --qwik-light-blue: #18b6f6;
-    --qwik-light-purple: #ac7ff4;
-    --qwik-dark-purple: #713fc2;
-    --qwik-dirty-black: #1d2033;
-    --qwik-dark-background: #151934;
-    --qwik-dark-text: #ffffff;
+  /* remove touch callout */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Touch action manipulation on anything interactive */
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  details,
+  summary {
+    touch-action: manipulation;
+  }
+
+  /* Disable user select for most things by default */
+  * {
+    user-select: none;
+    cursor: default;
   }
 }
 
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
+@layer utilities {
+  .ellipsis {
+    @apply whitespace-nowrap text-ellipsis overflow-hidden min-w-0;
+  }
 
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
+  /* Safe area padding */
+  .pt-safe {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pr-safe {
+    padding-right: constant(safe-area-inset-right);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .pb-safe {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pl-safe {
+    padding-left: constant(safe-area-inset-left);
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .pt-nav {
+    padding-top: calc(constant(safe-area-inset-top) + 64px);
+    padding-top: calc(env(safe-area-inset-top) + 64px);
+  }
+
+  .pb-nav {
+    padding-bottom: calc(constant(safe-area-inset-bottom) + 44px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 44px);
+  }
+
+  .animate-in {
+    animation: animate-in 0.25s ease-out;
+  }
+
+  .animate-up {
+    animation: animate-up 0.25s ease-out;
+  }
+
+  .animate-up-delayed {
+    --anim-duration: 0.25s;
+    animation: animate-up var(--anim-duration) ease-out;
+  }
+}
+
+@keyframes animate-in {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
