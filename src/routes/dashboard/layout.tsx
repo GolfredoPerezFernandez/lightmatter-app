@@ -2,9 +2,9 @@ import { component$,  Slot, useContextProvider, useSignal,  useVisibleTask$ } fr
 import { Link, type RequestHandler } from "@builder.io/qwik-city";
 import { LuArrowBigRightDash,LuFileStack,LuLayoutDashboard } from "@qwikest/icons/lucide";
 import clsx from "clsx";
-import { IconRotation } from "~/components/integrations/react/IconRotation";
-import { NavbarDesktop } from "~/components/integrations/react/NavbarDesktop";
 import { DashboardWidthContext,DashboardHeightContext } from "~/lib/context";
+import { IconRotation } from "~/react/IconRotation";
+import { NavbarDesktop } from "~/react/NavbarDesktop";
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.builder.io/docs/caching/
