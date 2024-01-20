@@ -9,8 +9,6 @@ export default component$(() => {
   const screeHeight = useContext(DashboardHeightContext);
   const screeWidth = useContext(DashboardWidthContext);
 
-  console.log("screeHeight "+screeHeight.value)
-  console.log("screeWidth "+screeWidth.value)
 
 console.log(screeWidth.value<screeHeight.value)
   return (  
