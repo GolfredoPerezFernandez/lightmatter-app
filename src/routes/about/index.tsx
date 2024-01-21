@@ -4,8 +4,8 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {  
 
   return (  
-    <div >
-      
+    <div  class={"w-full  max-w-full h-[400px]"}>
+
     </div>
   );
 });

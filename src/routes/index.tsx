@@ -1,14 +1,28 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import clsx from "clsx";
-
 export default component$(() => {
-  return (<div class={clsx("mt-[80px] ","flex-col  mx-[10%]")}>
-    <section class="bg-white dark:bg-gray-900">
+    const canvasRef = useSignal<HTMLCanvasElement>();
+
+    useVisibleTask$(() => {
+        if (!canvasRef.value) {
+          return;
+        }
+        
+        // Importa la aplicación de Spline en el efecto del lado del cliente
+        import('@splinetool/runtime').then(({ Application }) => {
+          const app = new Application(canvasRef.value);
+          app.load('https://prod.spline.design/SqLP3L9BthTI8A1m/scene.splinecode');
+        });
+      });  
+  return (
+<div class={"flex-col mt-[80px] mx-[10%]"}>
+    <section class="">
+
     <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Payments tool for software companies</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
+    <canvas id="canvas3d" class={"absolute inset-0 z-[-1] w-full h-[50%]"} ref={canvasRef}/>
+  <div class="mr-auto place-self-center lg:col-span-7">
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-black">Discover CootieBabies: The New Generation of NFTs on the Flare Blockchain</h1>
+            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl ">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
          
             <a href="/dasboard" class=" mx-3  mt-2 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 Mint Now
@@ -18,15 +32,14 @@ export default component$(() => {
             </a> 
         </div>
         <div class=" mt-10 col-span-5 flex">
-            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup"/>
-        </div>                
+         </div>                
     </div>
 </section>
-    <section class="bg-white dark:bg-gray-900">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+    <section class="">
+  <div class="py-8 mt-40 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <div class="max-w-screen-md mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
-          <p class="text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Invest in the Future of Art with CootieBabies NFTs</h2>
+          <p class="text-gray-500 sm:text-xl dark:text-gray-400">CootieBabies represents a unique collection of NFTs, each with its own identity and features on the Flare network. With advanced technology and unprecedented artistic design, each CootieBaby is more than an NFT; it's a digital work of art with potential for appreciation.</p>
       </div>
       <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
           <div>
@@ -74,12 +87,12 @@ export default component$(() => {
       </div>
   </div>
 </section>
-<section class="bg-white dark:bg-gray-900">
+<section class=" dark:bg-gray-900">
   <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
       <dl class="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3 dark:text-white">
           <div class="flex flex-col items-center justify-center">
               <dt class="mb-2 text-3xl md:text-4xl font-extrabold">73M+</dt>
-              <dd class="font-light text-gray-500 dark:text-gray-400">developers</dd>
+              <dd class="font-light text-gray-500 dark:text-gray-400">Mints</dd>
           </div>
           <div class="flex flex-col items-center justify-center">
               <dt class="mb-2 text-3xl md:text-4xl font-extrabold">1B+</dt>
@@ -92,7 +105,8 @@ export default component$(() => {
       </dl>
   </div>
 </section>
-</div>
+
+</div>  
   );
 });
 

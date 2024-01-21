@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -8,11 +8,14 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 import { initFlowbite } from "flowbite";
+import { CanvasSpine } from "./components/integrations/react/CanvasSpine";
 
 export default component$(() => {
+
   useVisibleTask$(() => {
     initFlowbite();
-  });
+    
+  });  
   return (  <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
@@ -20,8 +23,8 @@ export default component$(() => {
 
         <RouterHead />
       </head>
-      <body lang="en">
-        
+      <body class={""} lang="en">
+
       <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -29,7 +32,10 @@ export default component$(() => {
       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </a>
   <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get a NFT</button>
+  <a href="/dashboard" aria-current="page">
+
+      <button  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get a NFT</button>
+      </a>
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -49,8 +55,8 @@ export default component$(() => {
   </div>
   </div>
 </nav>
-
         <RouterOutlet />
+     
         <footer class="bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 dark:bg-gray-800 antialiased">
   <p class="mb-4 text-sm text-center text-gray-500 dark:text-gray-400 sm:mb-0">
       &copy; 2019-2022 <a href="https://flowbite.com/" class="hover:underline" target="_blank">Flowbite.com</a>. All rights reserved.

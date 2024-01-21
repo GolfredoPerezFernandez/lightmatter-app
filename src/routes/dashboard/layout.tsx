@@ -3,8 +3,8 @@ import { Link, type RequestHandler } from "@builder.io/qwik-city";
 import { LuArrowBigRightDash,LuFileStack,LuLayoutDashboard } from "@qwikest/icons/lucide";
 import clsx from "clsx";
 import { DashboardWidthContext,DashboardHeightContext } from "~/lib/context";
-import { IconRotation } from "~/react/IconRotation";
-import { NavbarDesktop } from "~/react/NavbarDesktop";
+import { IconRotation } from "~/components/integrations/react/IconRotation";
+import { NavbarDesktop } from "~/components/integrations/react/NavbarDesktop";
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.builder.io/docs/caching/
@@ -21,7 +21,7 @@ const navigation = [
 ];
 export default component$(() => {
   const activeNavIndex=useSignal<number>(0)
-  const isExpanded=useSignal<boolean>(false)
+  const isExpanded=useSignal<boolean>(!false)
  
   
   const screenWidth = useSignal<number>(0);
@@ -59,7 +59,7 @@ console.log(screenHeight.value)
             isExpanded.value=!isExpanded.value;
           }}  class={"w-10 h-10 bg-black absolute rounded-full -right-[19.5px]  top-1/3  flex items-center justify-center "}>
     <IconRotation isExpanded={isExpanded.value}>
-    <LuArrowBigRightDash style={{rotate:'180deg'}} color={"white"}/>
+    <LuArrowBigRightDash style={{rotate:'0deg'}} color={"white"}/>
 
     </IconRotation>
    
