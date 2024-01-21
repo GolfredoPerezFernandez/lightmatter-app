@@ -8,7 +8,6 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 import { initFlowbite } from "flowbite";
-import { CanvasSpine } from "./components/integrations/react/CanvasSpine";
 
 export default component$(() => {
 
