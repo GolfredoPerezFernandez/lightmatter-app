@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
-    const canvasRef = useSignal<HTMLCanvasElement>();
+    const canvasRef = useSignal<any>();
 
     useVisibleTask$(() => {
         if (!canvasRef.value) {
