@@ -13,33 +13,25 @@ export default component$(() => {
     // Importa la aplicación de Spline en el efecto del lado del cliente
     import('@splinetool/runtime').then(({ Application }) => {
       const app = new Application(canvasRef.value);
-      app.load('https://my.spline.design/retroglassmaterial-cb5c5dec9dc92bef58fe2106115e5ee3/');
+      app.load('https://prod.spline.design/1uzOvUBfIvcwTUb8/scene.splinecode');
     });
   }); 
-  return (
-<div class={"flex-col mt-[80px] mx-[10%]"}>
-    <section class="">
+  return (    <section class="grid max-w-screen-xl mt-[5%] mx-auto justify-center w-full h-full">
 
-    <div class="grid max-w-screen-xl px-2 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-  <div class="mr-auto place-self-center justify-center align-center lg:col-span-7">
-  <canvas id="canvas3d" class={"absolute inset-0 z-[-1] w-full h-[100%]"} ref={canvasRef}/>
+  <div class="mr-auto place-self-center justify-center align-center lg:col-span-12">
+  <canvas id="canvas3d" class={""} ref={canvasRef}/>
 
-<h1 class="mb-4 mt-[10%] text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-8xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-pink-600 from-sky-400">Discover  </span> Cootie Babies</h1>
-<p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">The New Generation of NFTs on the Flare Blockchain.</p>
-<a href="/" class=" mx-3 font-normal mt-8 inline-flex items-center justify-center button-main">
+<p class="text-lg py-0 px-10 font-normal text-gray-500 lg:text-xl dark:text-gray-400">The New Generation of NFTs on the Flare Blockchain.</p>
+<a href="/" class="w-[100%]  px-10 mx-3 font-normal mt-8 inline-flex items-center justify-center button-main">
                 MINT A COOTIE
             </a> 
-            <a href="/dasboard" class=" mx-3 font-normal mt-8 inline-flex items-center justify-center button-secondary">
+            <a href="/dasboard" class="w-[100%]  mx-3 my-5 font-normal mt-8 inline-flex items-center justify-center button-secondary">
                 COLLECTION
             </a> 
-        </div>
-        <div class=" mt-10 col-span-5 flex">
-         </div>                
-    </div>
+        </div>      
     
 </section>
 
-</div>  
   );
 });
 
