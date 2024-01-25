@@ -14,6 +14,7 @@ export default component$(() => {
     <div class={clsx(screeWidth.value>screeHeight.value&&screeWidth.value<1000&&screeHeight.value<600?"mt-[30%]":"mt-[10%]" ,"px-[10%]  justify-center items-center w-full h-full container mx-10 ")}>
       <div class={"grid-container justify-center items-center "}>
         <div style={{marginTop:screeHeight.value<600?"30%":"10%"}} class="file-upload h-[300px]  justify-center items-center col-span-4 row-span-4">
+         
           <label for="dropzone-file"  class="flex flex-col w-full h-full items-center justify-center  ">
             
             <svg class="w-8 h-8 mb-0 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
