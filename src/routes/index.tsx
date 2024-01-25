@@ -18,14 +18,14 @@ export default component$(() => {
   }); 
   return (    <section class="grid max-w-screen-xl mt-[5%] mx-auto justify-center w-full h-full">
 
-  <div class="mr-auto place-self-center justify-center align-center lg:col-span-12">
+  <div class="py-10 px-[10%]  align-center mr-auto place-self-center justify-center align-center lg:col-span-12">
   <canvas id="canvas3d" class={""} ref={canvasRef}/>
 
-<p class="text-lg py-0 px-10 font-normal text-gray-500 lg:text-xl dark:text-gray-400">The New Generation of NFTs on the Flare Blockchain.</p>
-<a href="/" class="w-[100%]  px-10 mx-3 font-normal mt-8 inline-flex items-center justify-center button-main">
+<p class="text-lg  px-10 font-normal text-gray-500 lg:text-xl dark:text-gray-400">The New Generation of NFTs on the Flare Blockchain.</p>
+<a href="/" class="px-10 mx-3 font-normal mt-8 inline-flex items-center justify-center button-main">
                 MINT A COOTIE
             </a> 
-            <a href="/dasboard" class="w-[100%]  mx-3 my-5 font-normal mt-8 inline-flex items-center justify-center button-secondary">
+            <a href="/dasboard" class=" mx-3 font-normal mt-8 inline-flex items-center justify-center button-secondary">
                 COLLECTION
             </a> 
         </div>      
