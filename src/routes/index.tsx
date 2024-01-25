@@ -4,7 +4,19 @@ export default component$(() => {
 
     
   const canvasRef = useSignal<any>();
+  const canvasRef2 = useSignal<any>();
 
+  useVisibleTask$(() => {
+    if (!canvasRef2.value) {
+      return;
+    }
+    
+    // Importa la aplicación de Spline en el efecto del lado del cliente
+    import('@splinetool/runtime').then(({ Application }) => {
+      const app = new Application(canvasRef2.value);
+      app.load('https://prod.spline.design/44ped8gWYyIHt4Mi/scene.splinecode');
+    });
+  }); 
   useVisibleTask$(() => {
     if (!canvasRef.value) {
       return;
@@ -16,19 +28,12 @@ export default component$(() => {
       app.load('https://prod.spline.design/1uzOvUBfIvcwTUb8/scene.splinecode');
     });
   }); 
-  return (    <section class="grid w-full h-full max-w-screen-xl mt-[5%] mx-auto justify-center w-full h-full">
+  return (    <section class="grid  justify-center max-w-screen-xl mt-[5%] mx-auto justify-center items-center w-[100%] h-[100%]">
 
-  <div class="py-10 px-[10%]  align-center mr-auto place-self-center justify-center align-center lg:col-span-12">
-  <canvas id="canvas3d" class={""} ref={canvasRef}/>
-
-<p class="text-lg  px-10 font-normal text-gray-500 lg:text-xl dark:text-gray-400">The New Generation of NFTs on the Flare Blockchain.</p>
-<a href="/" class="px-10 mx-3 font-normal mt-8 inline-flex items-center justify-center button-main">
-                MINT A COOTIE
-            </a> 
-            <a href="/dasboard" class=" mx-3 font-normal mt-8 inline-flex items-center justify-center button-secondary">
-                COLLECTION
-            </a> 
-        </div>      
+  <canvas id="canvas3d" class={"w-350px h-450px"} ref={canvasRef}>
+</canvas>
+<canvas id="canvas3d" class={"mx-[44%]"} ref={canvasRef2}>
+</canvas>
     
 </section>
 
