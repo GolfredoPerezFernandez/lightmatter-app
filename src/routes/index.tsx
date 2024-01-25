@@ -16,7 +16,7 @@ export default component$(() => {
       app.load('https://prod.spline.design/1uzOvUBfIvcwTUb8/scene.splinecode');
     });
   }); 
-  return (    <section class="grid max-w-screen-xl mt-[5%] mx-auto justify-center w-full h-full">
+  return (    <section class="grid w-full h-full max-w-screen-xl mt-[5%] mx-auto justify-center w-full h-full">
 
   <div class="py-10 px-[10%]  align-center mr-auto place-self-center justify-center align-center lg:col-span-12">
   <canvas id="canvas3d" class={""} ref={canvasRef}/>
