@@ -22,10 +22,10 @@ export default component$(() => {
     }
     
     // Importa la aplicación de Spline en el efecto del lado del cliente
-    import('@splinetool/runtime').then(({ Application }) => {
+  /*   import('@splinetool/runtime').then(({ Application }) => {
       const app = new Application(canvasRef.value);
       app.load('https://prod.spline.design/SqLP3L9BthTI8A1m/scene.splinecode');
-    });
+    }); */
   }); 
   return (  <QwikCityProvider>
       <head>
@@ -37,7 +37,6 @@ export default component$(() => {
       <body class={""} lang="en">
 
 
-<canvas id="canvas3d" class={"absolute inset-0 z-[-1] w-full h-[100%]"} ref={canvasRef}/>
 
         <RouterOutlet />
      {/* 

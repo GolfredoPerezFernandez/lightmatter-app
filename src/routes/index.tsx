@@ -25,16 +25,13 @@ export default component$(() => {
     // Importa la aplicación de Spline en el efecto del lado del cliente
     import('@splinetool/runtime').then(({ Application }) => {
       const app = new Application(canvasRef.value);
-      app.load('https://prod.spline.design/1uzOvUBfIvcwTUb8/scene.splinecode');
+      app.load('https://prod.spline.design/3YMzCHxWOY5taTd4/scene.splinecode');
     });
   }); 
-  return (    <section class="grid  justify-center max-w-screen-xl mt-[5%] mx-auto justify-center items-center w-[100%] h-[100%]">
+  return (    <section class="grid   max-w-screen-xl mt-[5%] mx-auto justify-center items-center w-[100%] h-[100%]">
+       <canvas id="canvas3d" class={"absolute inset-0 z-[-1] w-full h-[100%]"} ref={canvasRef}/>
 
-  <canvas id="canvas3d" class={"w-350px h-450px"} ref={canvasRef}>
-</canvas>
-<canvas id="canvas3d" class={"mx-[44%]"} ref={canvasRef2}>
-</canvas>
-    
+
 </section>
 
   );

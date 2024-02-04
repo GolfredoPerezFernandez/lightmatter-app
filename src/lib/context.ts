@@ -7,3 +7,12 @@ export const DashboardWidthContext = createContextId<any>(
   export const DashboardHeightContext = createContextId<any>(
       'height.layout-context'
     );
+    
+
+    export const HomeWidthContext = createContextId<any>(
+        'width.home-context'
+      );
+    
+      export const HomeHeightContext = createContextId<any>(
+          'height.home-context'
+        );
